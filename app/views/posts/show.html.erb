@@ -3,14 +3,16 @@
 
 <section class="section">
 	<div class="container">
-		<nav class="level">
-			<!-- Left side -->
-			
 
-		<!-- Right side -->
+		<div class="content">
+			<p style="font-size:20px"><%= simple_format sanitize(Rinku.auto_link(@post.content)) %></p>
+		</div>
+			
+		<hr />
+		<nav class="level">
 		<% if current_user == @post.user %>
 		<div class="level-left">
-				<p class="level-item"
+				<p class="level-item">
 				<strong>Acciones</strong>
 			</p>
 		</div>
@@ -23,17 +25,9 @@
 			</p>
 		</div>
 		<% end %>
-
-	</nav>
-	<hr />
-
-
-		<div class="content">
-			<p style="font-size:20px"><%= simple_format sanitize(Rinku.auto_link(@post.content)) %></p>
-		</div>
+		</nav>
 	</div>
 </section>
-
 <section class="section comments">
 	<div class="container">
 	<h2 class="subtitle is-5">
