@@ -4,7 +4,7 @@
 
     <div class="column is-4">
       
-    <h2 class="title is-2">Sign Up</h2>
+    <h2 class="title is-2">Crea tu cuenta</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -19,19 +19,19 @@
       
     <div class="field">
       <div class="control">
-        <%= f.input :password, required: true, input_html: { class:"input" }, wrapper: false, label_html: { class:"label" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password, label: "Contraseña", required: true, input_html: { class:"input" }, wrapper: false, label_html: { class:"label" }, hint: ("#{@minimum_password_length} caracteres minimo" if @minimum_password_length) %>
       </div>
     </div>
 
     <div class="field">
       <div class="control">
-        <%= f.input :password_confirmation, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" } %>   
+        <%= f.input :password_confirmation, label: "Confirmar contraseña", required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" } %>   
       </div>
     </div>
 
     <div class="field">
       <div class="control">
-        <%= f.button :submit, "Sign up", class:"button is-info is-medium" %>
+        <%= f.button :submit, "Aceptar", class:"button is-info is-medium" %>
       </div>
     </div>
 

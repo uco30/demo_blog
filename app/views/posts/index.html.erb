@@ -1,20 +1,26 @@
-<% content_for :page_title, "All Posts" %>
+<% content_for :page_title, "Relatos de viaje" %>
 
 	<section class="section">
 	  <div class="container">
 		<% @posts.each do |post| %>
 		  <div class="card">
 		  	<div class="card-content">
+			  <div class="media-left">
+  			<figure class="image is-64x64">
+  				<%= gravatar_image_tag(post.user.email, size: 64, alt: post.user) %>
+  			</figure><br>
+  		</div>
 		  	   <div class="media">
 		  	   	  <div class="media-content">
 		  	   	  	<p class="title is-4"> <%= link_to post.title, post %></p>
 		  	   	  </div>
 		  	   	</div>
-		  	   	<div class="content">
-		  	   		<%= post.content %>
+		  	   	
+		  	   	<div>
+		  	   		<span class="tag is-rounded"><p class="title is-6">Por: <%= post.user.email %></p></span>
 		  	   	</div>
-		  	   	<div class="media">
-		  	   		<span class="tag is-rounded"><p class="title is-6">By: <%= post.user.email %></p></span>
+					 <div>
+		  	   		<span class="tag is-rounded"><p class="title is-6">Creado el: <%= post.created_at %></p></span>
 		  	   	</div>
 		  	   </div>
 		  	</div>
